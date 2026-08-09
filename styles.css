@@ -16,7 +16,8 @@
 
 body {
   background-color: var(--bg-color);
-  min-height: 100vh;
+  min-height: 100vh; /* Fallback for older browsers */
+  min-height: 100dvh; /* Adapts to mobile URL bar changes */
   display: flex;
   justify-content: center;
   align-items: center;
