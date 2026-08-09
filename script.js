@@ -12,16 +12,21 @@ function setInitialNoPosition() {
 
 setInitialNoPosition();
 
+
 // Function to fly the No button anywhere on screen
 function dodgeNoButton() {
   const btnWidth = noBtn.offsetWidth;
   const btnHeight = noBtn.offsetHeight;
 
-  const maxX = window.innerWidth - btnWidth - 30;
-  const maxY = window.innerHeight - btnHeight - 30;
+  // Use visualViewport for mobile screen dimensions
+  const viewportWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+  const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
 
-  const randomX = Math.max(30, Math.floor(Math.random() * maxX));
-  const randomY = Math.max(30, Math.floor(Math.random() * maxY));
+  const maxX = viewportWidth - btnWidth - 20;
+  const maxY = viewportHeight - btnHeight - 20;
+
+  const randomX = Math.max(20, Math.floor(Math.random() * maxX));
+  const randomY = Math.max(20, Math.floor(Math.random() * maxY));
 
   noBtn.style.position = 'fixed';
   noBtn.style.left = `${randomX}px`;
